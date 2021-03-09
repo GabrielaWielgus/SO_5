@@ -1,18 +1,6 @@
 #include "headers.h"
 #include "sem.c"
 
-//ponieważ ta unia jest zdefiniowana tylko na niektórych systemach.
-/*#if defined(__GNU_LIBRARY__) && !defined(_SEM_SEMUN_UNDEFINED)
-#else
-union semun
-{
-        int val;                        //value for SETVAL
-        struct semid_ds *buf;        //buffer for IPC_STAT, IPC_SET
-        unsigned short int *array;        //array for GETALL, SETALL
-        struct seminfo *__buf;        //buffer for IPC_INFO
-};
-#endif
-*/
 int main(int argc, char *argv[]){
 	int i,exec,str_long,waitpid,x;
     char *nazwa;
@@ -28,8 +16,6 @@ int main(int argc, char *argv[]){
 	}
 
 	printf("PROGRAM GLOWNY.\n");
-	
-	//wciecie = sprawdzanie poprawnosci wywolania programu
 	
 		if(argc != 4){
 			printf("Zla liczba argumentow\nwywolaj program_glowny P1 P2 P3\n");
